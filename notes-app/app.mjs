@@ -1,10 +1,8 @@
 import notes from './notes.mjs';
 import validator from 'validator';
+import chalk from 'chalk';
 
-notes();
-
-console.log(validator.isEmail("mamunramdhan@gmail.com"));
-console.log(validator.isURL("https://qmun14.github.io"));
+console.log(chalk.inverse.bold.green("Succes..!"));
 
 
 
