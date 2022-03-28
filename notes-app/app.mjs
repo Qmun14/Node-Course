@@ -2,7 +2,7 @@ import notes from './notes.mjs';
 import validator from 'validator';
 import chalk from 'chalk';
 
-console.log(chalk.inverse.bold.green("Succes..!"));
+console.log(chalk.inverse.bold.red("failed..!"));
 
 
 
