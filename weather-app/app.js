@@ -7,16 +7,16 @@ const urlLocation = "https://api.mapbox.com/geocoding/v5/mapbox.places/Bogor%20W
 
 const inputLocation = process.argv[2].toString();
 
-geocode(inputLocation, (error, data) => {
-    if (error) {
+geocode(inputLocation, (error, { latitude, longitude, location } = {}) => {
+    if (error) { 
         return console.log(error);
     }
 
-    forecast(data.latitude, data.longitude, (error, forecastData) => {
+    forecast(latitude, longitude, (error, forecastData) => {
         if (error) {
             return console.log(error);
         }
-        console.log(data.location)
+        console.log(location)
         console.log(forecastData);
     })
 
