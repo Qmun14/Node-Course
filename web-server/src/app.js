@@ -43,15 +43,28 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
+    if (!req.query.address) {
+        return res.send({
+            err : 'You must provide location to search!'
+        })
+    }
+    console.log(req.query);
     res.send({
-        forecast : {
-            temp : '30 degree Celcius',
-            feelslike :  '32 degree Celcius'
-        },
-        location : {
-            city : 'Jakarta',
-            state : 'Indonesia'
-        }
+        forecast : 'Cuaca berkabut',
+        location : 'Puncak Bogor',
+        address : req.query.address
+    })
+})
+
+app.get('/products', (req, res) => {
+    if (!req.query.search) {
+        return res.send({                                       //'return' its used to provide that after send response in if condition its res.send below doesn't execute too 
+            err : 'You must provide a search term!'             //it's awesome than to use else statement
+        })
+    }
+    console.log(req.query);
+    res.send({
+        products : []
     })
 })
 
