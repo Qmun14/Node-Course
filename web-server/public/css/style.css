@@ -4,6 +4,14 @@ body {
     max-width: 650px;
     margin: 0 auto;
     padding: 0 16px;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;  /* artinya 100% dari tinggi viewport/layar browser */
+}
+
+.main-content {
+    flex-grow: 1;
 }
 
 footer {
@@ -27,4 +35,16 @@ header a {
     color: #888888;
     margin-right: 16px;
     text-decoration: none;
+}
+
+.potrait {
+    width: 250px;
+}
+
+.err-footer {
+    font-size: 32px;
+    color: #888888;
+    border-top: 1px solid #eee;
+    margin-top: 16px;
+    padding: 64px 0;
 }
