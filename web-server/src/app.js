@@ -57,13 +57,15 @@ app.get('/weather', (req, res) => {
 
 app.get('/help/*', (req, res) => {
     res.render('article-not-found', {
-        title : 'Article Not Found!'
+        title : 'Article Not Found!',
+        errorMessage : `This WebApp not contain Help Article at this moment, Maybe will be available soon.`
     })
 })
 
 app.get('*', (req, res) => {
     res.render('404-error', {
-        title : '404 Not Found!'
+        title : '404 Not Found!',
+        errorMessage : 'You just access forbiden Page/Method Please Go Back'
     })
 })
 
